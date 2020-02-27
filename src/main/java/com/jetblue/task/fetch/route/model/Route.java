@@ -1,5 +1,8 @@
 package com.jetblue.task.fetch.route.model;
 
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 public class Route {
 
     private String city1;
@@ -62,12 +65,6 @@ public class Route {
 
     @Override
     public String toString() {
-        return "Route{" +
-                "city1='" + city1 + '\'' +
-                ", city2='" + city2 + '\'' +
-                ", city3='" + city3 + '\'' +
-                ", mint='" + mint + '\'' +
-                ", seasonal='" + seasonal + '\'' +
-                '}';
+        return ToStringBuilder.reflectionToString(this);
     }
 }

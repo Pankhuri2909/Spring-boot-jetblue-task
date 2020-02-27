@@ -5,6 +5,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
@@ -15,15 +16,17 @@ import java.util.List;
 
 public class RouteCSVReader {
 
-    private static final String CSV_PATH = System.getProperty("user.dir") + File.separator + "src"
+ private static final String CSV_PATH = System.getProperty("user.dir") + File.separator + "src"
             + File.separator + "main" + File.separator + "resources" + File.separator + "csvDataFiles" + File.separator
             + "Routes.csv";
+
 
     public static List<Route> getCSVRouteData() {
 
         List<Route> listOfAllRoutes = new ArrayList<Route>();
 
         try {
+            System.out.println(CSV_PATH);
             Reader reader = Files.newBufferedReader(Paths.get(CSV_PATH));
             CSVParser csvParser = new CSVParser(reader,
                     CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());
@@ -42,8 +45,7 @@ public class RouteCSVReader {
         }
         return listOfAllRoutes;
     }
-    public static void main(String[] args) {
-        System.out.println(getCSVRouteData());
-    }
+
+
 
 }

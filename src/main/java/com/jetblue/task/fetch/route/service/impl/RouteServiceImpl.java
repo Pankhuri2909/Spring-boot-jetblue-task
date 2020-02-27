@@ -15,13 +15,15 @@ import java.util.stream.Collectors;
 @Service
 public class RouteServiceImpl implements RouteService {
 
+    private static List<Route> list;
+
     @Autowired
     RouteDao routeDao;
 
     @Transactional
     @Override
     public List<Route> get() {
-        return loadList();
+        return list;
     }
 
     public List<Route> getSpecificRoute(@PathVariable(value = "name") String city) {
@@ -38,7 +40,7 @@ public class RouteServiceImpl implements RouteService {
     }
 
     @PostConstruct
-    public List<Route> loadList(){
-        return routeDao.getAllRoutes();
+    public void loadList(){
+        list =  routeDao.getAllRoutes();
     }
 }
