@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.annotation.PostConstruct;
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,7 +19,6 @@ public class RouteServiceImpl implements RouteService {
     @Autowired
     RouteDao routeDao;
 
-    @Transactional
     @Override
     public List<Route> get() {
         return list;

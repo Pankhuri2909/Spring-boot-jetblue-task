@@ -17,7 +17,7 @@ import java.util.List;
 public class RouteCSVReader {
 
  private static final String CSV_PATH = System.getProperty("user.dir") + File.separator + "src"
-            + File.separator + "main" + File.separator + "resources" + File.separator + "csvDataFiles" + File.separator
+            + File.separator + "main" + File.separator + "resources" + File.separator
             + "Routes.csv";
 
 

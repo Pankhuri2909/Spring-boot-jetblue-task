@@ -3,6 +3,8 @@ package com.jetblue.task.fetch.route.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+
+
 public class Route {
 
     private String city1;
