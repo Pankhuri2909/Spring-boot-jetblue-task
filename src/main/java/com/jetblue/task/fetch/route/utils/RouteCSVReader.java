@@ -4,8 +4,9 @@ import com.jetblue.task.fetch.route.model.Route;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.context.annotation.Bean;
 
-
+import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
@@ -16,11 +17,13 @@ import java.util.List;
 
 public class RouteCSVReader {
 
- private static final String CSV_PATH = System.getProperty("user.dir") + File.separator + "src"
+    private static final String CSV_PATH = System.getProperty("user.dir") + File.separator + "src"
             + File.separator + "main" + File.separator + "resources" + File.separator
             + "Routes.csv";
 
 
+    @Bean
+    @PostConstruct
     public static List<Route> getCSVRouteData() {
 
         List<Route> listOfAllRoutes = new ArrayList<Route>();
@@ -39,13 +42,12 @@ public class RouteCSVReader {
                 route.setSeasonal(csvRecord.get("seasonal"));
                 listOfAllRoutes.add(route);
             }
-            System.out.println("Number of ROUTES in the CSV : "+ listOfAllRoutes.size());
+            System.out.println("Number of ROUTES in the CSV : " + listOfAllRoutes.size());
         } catch (IOException e) {
             e.printStackTrace();
         }
         return listOfAllRoutes;
     }
-
 
 
 }

@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public class RouteDao {
 
-    public List<Route> getAllRoutes() {
+    public List<Route> get() {
         List<Route> listOfRoutes = RouteCSVReader.getCSVRouteData();
         return listOfRoutes;
     }

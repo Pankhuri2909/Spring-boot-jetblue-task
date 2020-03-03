@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface RouteService {
 
-    List<Route> get();
-
     List<Route> getSpecificRoute(String city);
 
 
