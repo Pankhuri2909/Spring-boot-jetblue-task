@@ -15,11 +15,17 @@ import static org.junit.Assert.assertNotNull;
 @SpringBootTest
 public class RouteCSVReaderTest {
 
+    private Exception exception;
+
     @Test
     public void getCSVRouteDataTest() {
         List<Route> routes = RouteCSVReader.getCSVRouteData();
-        assertEquals(69,routes.size());
         assertEquals("ABQ",routes.get(0).getCity1());
+        assertEquals("0",routes.get(0).getCity2());
+        assertEquals("JFK",routes.get(0).getCity3());
+        assertEquals("0",routes.get(0).getMint());
+        assertEquals("0",routes.get(0).getSeasonal());
+        assertEquals(69,routes.size());
         assertNotNull(routes);
     }
 

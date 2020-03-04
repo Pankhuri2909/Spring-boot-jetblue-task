@@ -22,6 +22,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class RouteServiceTest extends AbstractTest {
+
     @InjectMocks
     private RouteServiceImpl routeService;
 

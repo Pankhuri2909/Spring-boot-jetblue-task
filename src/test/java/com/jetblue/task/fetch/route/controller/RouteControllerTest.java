@@ -2,8 +2,10 @@ package com.jetblue.task.fetch.route.controller;
 
 import com.jetblue.task.fetch.route.AbstractTest;
 import com.jetblue.task.fetch.route.model.Route;
+import com.jetblue.task.fetch.route.service.RouteService;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
@@ -19,6 +21,9 @@ public class RouteControllerTest extends AbstractTest {
 
     @Autowired
     private WebApplicationContext context;
+
+    @Mock
+    private RouteService routeService;
 
     @Before
     public void setup() {
